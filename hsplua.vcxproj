@@ -54,7 +54,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>$(ProjectDir)lua\lua52.dll;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(ProjectDir)lua\lua52.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -73,11 +73,24 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>$(ProjectDir)lua\lua52.dll;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(ProjectDir)lua\lua52.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="hsplua.cpp" />
+    <ClCompile Include="hsp\hsp3plugin.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="hsplua.h" />
+    <ClInclude Include="hsp\hsp3debug.h" />
+    <ClInclude Include="hsp\hsp3plugin.h" />
+    <ClInclude Include="hsp\hsp3struct.h" />
+    <ClInclude Include="hsp\hspvar_core.h" />
+    <ClInclude Include="lua\include\lauxlib.h" />
+    <ClInclude Include="lua\include\lua.h" />
+    <ClInclude Include="lua\include\lua.hpp" />
+    <ClInclude Include="lua\include\luaconf.h" />
+    <ClInclude Include="lua\include\lualib.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

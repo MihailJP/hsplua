@@ -13,10 +13,51 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="HSP">
+      <UniqueIdentifier>{c744e394-4172-4764-b26e-5f57bdd01b62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lua">
+      <UniqueIdentifier>{31fc4bfc-2a99-408d-9924-822d0bfd2fac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="hsp\hsp3plugin.cpp">
+      <Filter>HSP</Filter>
+    </ClCompile>
     <ClCompile Include="hsplua.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="hsp\hsp3debug.h">
+      <Filter>HSP</Filter>
+    </ClInclude>
+    <ClInclude Include="hsp\hsp3plugin.h">
+      <Filter>HSP</Filter>
+    </ClInclude>
+    <ClInclude Include="hsp\hsp3struct.h">
+      <Filter>HSP</Filter>
+    </ClInclude>
+    <ClInclude Include="hsp\hspvar_core.h">
+      <Filter>HSP</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\include\lauxlib.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\include\lua.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\include\lua.hpp">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\include\luaconf.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\include\lualib.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="hsplua.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
