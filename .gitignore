@@ -2,3 +2,8 @@
 *.sdf
 *.sln
 *.suo
+Debug/
+Release/
+ipch/
+lua/*
+!lua/README
