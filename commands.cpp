@@ -1,16 +1,7 @@
 #include "commands.h"
 #include "hsplua.h"
+#include "chkstat.h"
 #include "hsp/hsp3plugin.h"
-
-void checkState(int statNum) {
-	try {
-		if (luaStates.at(statNum) == NULL)
-			throw HSPERR_ILLEGAL_FUNCTION;
-	} catch (std::out_of_range&) {
-		throw HSPERR_ILLEGAL_FUNCTION;
-	}
-	return;
-}
 
 void hsplua_cmd::hl_newstate() { // 新規Luaステート
 	int statNum = exinfo->HspFunc_prm_getdi(luaStates.size()); // ステート管理番号
