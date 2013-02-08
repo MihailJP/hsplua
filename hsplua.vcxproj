@@ -81,6 +81,8 @@
     <ClCompile Include="commands.cpp" />
     <ClCompile Include="hsplua.cpp" />
     <ClCompile Include="hsp\hsp3plugin.cpp" />
+    <ClCompile Include="labelfunc.cpp" />
+    <ClCompile Include="pushpop.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chkstat.h" />
@@ -90,11 +92,13 @@
     <ClInclude Include="hsp\hsp3plugin.h" />
     <ClInclude Include="hsp\hsp3struct.h" />
     <ClInclude Include="hsp\hspvar_core.h" />
+    <ClInclude Include="labelfunc.h" />
     <ClInclude Include="lua\include\lauxlib.h" />
     <ClInclude Include="lua\include\lua.h" />
     <ClInclude Include="lua\include\lua.hpp" />
     <ClInclude Include="lua\include\luaconf.h" />
     <ClInclude Include="lua\include\lualib.h" />
+    <ClInclude Include="pushpop.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

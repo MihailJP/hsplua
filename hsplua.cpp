@@ -7,6 +7,7 @@
 #include "hsplua.h"
 #include "hsp/hsp3plugin.h"
 #include "commands.h"
+#include "pushpop.h"
 
  /*------------------------------------------------------------*/
 /*
@@ -24,14 +25,21 @@ static int cmdfunc( int cmd )
 	code_next();							// 次のコードを取得(最初に必ず必要です)
 
 	switch( cmd ) {							// サブコマンドごとの分岐
-	case 0x00:
-		hsplua_cmd::hl_newstate(); break;
-	case 0x01:
-		hsplua_cmd::hl_switchstate(); break;
-	case 0x02:
-		hsplua_cmd::hl_close(); break;
-	default:
-		puterror( HSPERR_UNSUPPORTED_FUNCTION );
+		case 0x00: hsplua_cmd::hl_newstate();             break;
+		case 0x01: hsplua_cmd::hl_switchstate();          break;
+		case 0x02: hsplua_cmd::hl_close();                break;
+		case 0x10: hsplua_cmd::hl_pop();                  break;
+		case 0x11: hsplua_cmd::hl_pushboolean();          break;
+		case 0x12: hsplua_cmd::hl_pushfunction();         break;
+		case 0x13: hsplua_cmd::hl_pushinteger();          break;
+		case 0x14: hsplua_cmd::hl_pushlightuserdata();    break;
+		case 0x15: hsplua_cmd::hl_pushlstring();          break;
+		case 0x16: hsplua_cmd::hl_pushnil();              break;
+		case 0x17: hsplua_cmd::hl_pushnumber();           break;
+		case 0x18: hsplua_cmd::hl_pushstring();           break;
+		case 0x19: hsplua_cmd::hl_pushvalue();            break;
+		case 0x1a: hsplua_cmd::hl_pushvarptr();           break;
+		default: puterror( HSPERR_UNSUPPORTED_FUNCTION ); break;
 	}
 	return RUNMODE_RUN;
 }
