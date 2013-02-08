@@ -27,6 +27,9 @@
     <ClCompile Include="hsplua.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="commands.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="hsp\hsp3debug.h">
@@ -57,6 +60,9 @@
       <Filter>Lua</Filter>
     </ClInclude>
     <ClInclude Include="hsplua.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="commands.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

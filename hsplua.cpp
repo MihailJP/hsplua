@@ -1,12 +1,12 @@
 
 //
-//		HSP複素数プラグイン（float型のサンプルから改造）
+//		HSPLUA
 //
 
-#define WIN32_LEAN_AND_MEAN		// Exclude rarely-used stuff from Windows headers
 #include <windows.h>
-#include "hsp/hsp3plugin.h"
 #include "hsplua.h"
+#include "hsp/hsp3plugin.h"
+#include "commands.h"
 
  /*------------------------------------------------------------*/
 /*
@@ -15,6 +15,7 @@
 /*------------------------------------------------------------*/
 
 std::vector<lua_State*> luaStates;
+unsigned currentState = 0;
 
 static int cmdfunc( int cmd )
 {
@@ -23,8 +24,12 @@ static int cmdfunc( int cmd )
 	code_next();							// 次のコードを取得(最初に必ず必要です)
 
 	switch( cmd ) {							// サブコマンドごとの分岐
-	case 0x00:								// 命令１
-		break;
+	case 0x00:
+		hsplua_cmd::hl_newstate(); break;
+	case 0x01:
+		hsplua_cmd::hl_switchstate(); break;
+	case 0x02:
+		hsplua_cmd::hl_close(); break;
 	default:
 		puterror( HSPERR_UNSUPPORTED_FUNCTION );
 	}
