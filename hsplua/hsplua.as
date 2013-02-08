@@ -13,3 +13,15 @@
 #cmd hl_pushstring              0x18
 #cmd hl_pushvalue               0x19
 #cmd hl_pushvarptr              0x1a
+#cmd hl_isboolean               0x80
+#cmd hl_iscfunction             0x81
+#cmd hl_isfunction              0x82
+#cmd hl_islightuserdata         0x83
+#cmd hl_isnil                   0x84
+#cmd hl_isnone                  0x85
+#cmd hl_isnoneornil             0x86
+#cmd hl_isnumber                0x87
+#cmd hl_isstring                0x88
+#cmd hl_istable                 0x89
+#cmd hl_isthread                0x8a
+#cmd hl_isuserdata              0x8b

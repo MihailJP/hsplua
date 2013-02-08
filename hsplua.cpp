@@ -8,6 +8,7 @@
 #include "hsp/hsp3plugin.h"
 #include "commands.h"
 #include "pushpop.h"
+#include "chktype.h"
 
  /*------------------------------------------------------------*/
 /*
@@ -46,7 +47,7 @@ static int cmdfunc( int cmd )
 
 /*------------------------------------------------------------*/
 
-static double ref_dval;						// 返値のための変数
+RefVal ref_val;						// 返値のための変数
 
 static void *reffunc( int *type_res, int cmd )
 {
@@ -62,10 +63,19 @@ static void *reffunc( int *type_res, int cmd )
 	code_next();
 
 	switch( cmd ) {							// サブコマンドごとの分岐
-	case 0x00:								// 関数１
-		break;
-	default:
-		puterror( HSPERR_UNSUPPORTED_FUNCTION );
+		case 0x80: *type_res = hsplua_func::hl_isboolean();       break;
+		case 0x81: *type_res = hsplua_func::hl_iscfunction();     break;
+		case 0x82: *type_res = hsplua_func::hl_isfunction();      break;
+		case 0x83: *type_res = hsplua_func::hl_islightuserdata(); break;
+		case 0x84: *type_res = hsplua_func::hl_isnil();           break;
+		case 0x85: *type_res = hsplua_func::hl_isnone();          break;
+		case 0x86: *type_res = hsplua_func::hl_isnoneornil();     break;
+		case 0x87: *type_res = hsplua_func::hl_isnumber();        break;
+		case 0x88: *type_res = hsplua_func::hl_isstring();        break;
+		case 0x89: *type_res = hsplua_func::hl_istable();         break;
+		case 0x8a: *type_res = hsplua_func::hl_isthread();        break;
+		case 0x8b: *type_res = hsplua_func::hl_isuserdata();      break;
+		default: puterror( HSPERR_UNSUPPORTED_FUNCTION );         break;
 	}
 
 	//			'('で終わるかを調べる
@@ -74,8 +84,7 @@ static void *reffunc( int *type_res, int cmd )
 	if ( *val != ')' ) puterror( HSPERR_INVALID_FUNCPARAM );
 	code_next();
 
-	*type_res = HSPVAR_FLAG_DOUBLE;		// 返値のタイプを指定する
-	return (void *)&ref_dval;
+	return (void *)&ref_val;
 }
 
 /*------------------------------------------------------------*/

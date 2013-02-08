@@ -422,3 +422,403 @@ hl_pushvalue
 %group
 Luaスタック操作命令
 
+%index
+hl_isboolean
+ブール値かどうか確認する
+
+%prm
+(p1)
+p1 : スタックのインデックス
+
+%inst
+Lua のスタックで指定されたインデックスの内容がブール値ならば 1、そうでなければ 0 を返します。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_iscfunction
+hl_isfunction
+hl_islightuserdata
+hl_isnil
+hl_isnone
+hl_isnoneornil
+hl_isnumber
+hl_isstring
+hl_istable
+hl_isthread
+hl_isuserdata
+
+%group
+Luaスタック状態取得関数
+
+%type
+拡張関数
+
+%index
+hl_iscfunction
+Cの関数かどうか確認する
+
+%prm
+(p1)
+p1 : スタックのインデックス
+
+%inst
+Lua のスタックで指定されたインデックスの内容が C の関数ならば 1、そうでなければ 0 を返します。
+
+hl_pushfunction で生成される関数は、実際には C のクロージャとして実装されています。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_isboolean
+hl_isfunction
+hl_islightuserdata
+hl_isnil
+hl_isnone
+hl_isnoneornil
+hl_isnumber
+hl_isstring
+hl_istable
+hl_isthread
+hl_isuserdata
+
+%group
+Luaスタック状態取得関数
+
+%type
+拡張関数
+
+%index
+hl_isfunction
+関数かどうか確認する
+
+%prm
+(p1)
+p1 : スタックのインデックス
+
+%inst
+Lua のスタックで指定されたインデックスの内容が関数ならば 1、そうでなければ 0 を返します。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_pushfunction
+hl_isboolean
+hl_iscfunction
+hl_islightuserdata
+hl_isnil
+hl_isnone
+hl_isnoneornil
+hl_isnumber
+hl_isstring
+hl_istable
+hl_isthread
+hl_isuserdata
+
+%group
+Luaスタック状態取得関数
+
+%type
+拡張関数
+
+%index
+hl_islightuserdata
+軽量ユーザーデータかどうか確認する
+
+%prm
+(p1)
+p1 : スタックのインデックス
+
+%inst
+Lua のスタックで指定されたインデックスの内容が軽量ユーザーデータならば 1、そうでなければ 0 を返します。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_isboolean
+hl_iscfunction
+hl_isfunction
+hl_isnil
+hl_isnone
+hl_isnoneornil
+hl_isnumber
+hl_isstring
+hl_istable
+hl_isthread
+hl_isuserdata
+
+%group
+Luaスタック状態取得関数
+
+%type
+拡張関数
+
+%index
+hl_isnil
+nil値かどうか確認する
+
+%prm
+(p1)
+p1 : スタックのインデックス
+
+%inst
+Lua のスタックで指定されたインデックスの内容が nil ならば 1、そうでなければ 0 を返します。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_isboolean
+hl_iscfunction
+hl_isfunction
+hl_islightuserdata
+hl_isnone
+hl_isnoneornil
+hl_isnumber
+hl_isstring
+hl_istable
+hl_isthread
+hl_isuserdata
+
+%group
+Luaスタック状態取得関数
+
+%type
+拡張関数
+
+%index
+hl_isnone
+インデックスが無効かどうか確認する
+
+%prm
+(p1)
+p1 : スタックのインデックス
+
+%inst
+Lua のスタックで指定されたインデックスが無効ならば 1、そうでなければ 0 を返します。
+すなわち、p1 が現在のスタックの外側を指しているならば 1 を返します。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_isboolean
+hl_iscfunction
+hl_isfunction
+hl_islightuserdata
+hl_isnil
+hl_isnoneornil
+hl_isnumber
+hl_isstring
+hl_istable
+hl_isthread
+hl_isuserdata
+
+%group
+Luaスタック状態取得関数
+
+%type
+拡張関数
+
+%index
+hl_isnoneornil
+nil値またはインデックスが無効かどうか確認する
+
+%prm
+(p1)
+p1 : スタックのインデックス
+
+%inst
+Lua のスタックで指定されたインデックスの内容が無効か、内容が nil ならば 1、そうでなければ 0 を返します。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_isboolean
+hl_iscfunction
+hl_isfunction
+hl_islightuserdata
+hl_isnil
+hl_isnone
+hl_isnumber
+hl_isstring
+hl_istable
+hl_isthread
+hl_isuserdata
+
+%group
+Luaスタック状態取得関数
+
+%type
+拡張関数
+
+%index
+hl_isnumber
+数値かどうか確認する
+
+%prm
+(p1)
+p1 : スタックのインデックス
+
+%inst
+Lua のスタックで指定されたインデックスの内容が数値ならば 1、そうでなければ 0 を返します。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_isboolean
+hl_iscfunction
+hl_isfunction
+hl_islightuserdata
+hl_isnil
+hl_isnone
+hl_isnoneornil
+hl_isstring
+hl_istable
+hl_isthread
+hl_isuserdata
+
+%group
+Luaスタック状態取得関数
+
+%type
+拡張関数
+
+%index
+hl_isstring
+文字列かどうか確認する
+
+%prm
+(p1)
+p1 : スタックのインデックス
+
+%inst
+Lua のスタックで指定されたインデックスの内容が文字列ならば 1、そうでなければ 0 を返します。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_isboolean
+hl_iscfunction
+hl_isfunction
+hl_islightuserdata
+hl_isnil
+hl_isnone
+hl_isnoneornil
+hl_isnumber
+hl_istable
+hl_isthread
+hl_isuserdata
+
+%group
+Luaスタック状態取得関数
+
+%type
+拡張関数
+
+%index
+hl_istable
+テーブルかどうか確認する
+
+%prm
+(p1)
+p1 : スタックのインデックス
+
+%inst
+Lua のスタックで指定されたインデックスの内容がテーブルならば 1、そうでなければ 0 を返します。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_isboolean
+hl_iscfunction
+hl_isfunction
+hl_islightuserdata
+hl_isnil
+hl_isnone
+hl_isnoneornil
+hl_isnumber
+hl_isstring
+hl_isthread
+hl_isuserdata
+
+%group
+Luaスタック状態取得関数
+
+%type
+拡張関数
+
+%index
+hl_isthread
+スレッドかどうか確認する
+
+%prm
+(p1)
+p1 : スタックのインデックス
+
+%inst
+Lua のスタックで指定されたインデックスの内容がスレッドならば 1、そうでなければ 0 を返します。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_isboolean
+hl_iscfunction
+hl_isfunction
+hl_islightuserdata
+hl_isnil
+hl_isnone
+hl_isnoneornil
+hl_isnumber
+hl_isstring
+hl_istable
+hl_isuserdata
+
+%group
+Luaスタック状態取得関数
+
+%type
+拡張関数
+
+%index
+hl_isuserdata
+ユーザーデータかどうか確認する
+
+%prm
+(p1)
+p1 : スタックのインデックス
+
+%inst
+Lua のスタックで指定されたインデックスの内容がユーザーデータならば 1、そうでなければ 0 を返します。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_isboolean
+hl_iscfunction
+hl_isfunction
+hl_islightuserdata
+hl_isnil
+hl_isnone
+hl_isnoneornil
+hl_isnumber
+hl_isstring
+hl_istable
+hl_isthread
+
+%group
+Luaスタック状態取得関数
+
+%type
+拡張関数
+

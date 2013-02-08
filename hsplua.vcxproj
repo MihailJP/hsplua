@@ -78,6 +78,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="chkstat.cpp" />
+    <ClCompile Include="chktype.cpp" />
     <ClCompile Include="commands.cpp" />
     <ClCompile Include="hsplua.cpp" />
     <ClCompile Include="hsp\hsp3plugin.cpp" />
@@ -86,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chkstat.h" />
+    <ClInclude Include="chktype.h" />
     <ClInclude Include="commands.h" />
     <ClInclude Include="hsplua.h" />
     <ClInclude Include="hsp\hsp3debug.h" />

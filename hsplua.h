@@ -7,4 +7,9 @@
 extern std::vector<lua_State*> luaStates;
 extern unsigned currentState;
 
+extern union RefVal {
+	int ival;
+	double dval;
+} ref_val;
+
 #endif
