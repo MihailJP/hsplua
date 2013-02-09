@@ -9,6 +9,8 @@
 #include "commands.h"
 #include "pushpop.h"
 #include "chktype.h"
+#include "readval.h"
+#include <cstdlib>
 
  /*------------------------------------------------------------*/
 /*
@@ -48,6 +50,7 @@ static int cmdfunc( int cmd )
 /*------------------------------------------------------------*/
 
 RefVal ref_val;						// 返値のための変数
+char* ref_sval = NULL;
 
 static void *reffunc( int *type_res, int cmd )
 {
@@ -75,6 +78,13 @@ static void *reffunc( int *type_res, int cmd )
 		case 0x89: *type_res = hsplua_func::hl_istable();         break;
 		case 0x8a: *type_res = hsplua_func::hl_isthread();        break;
 		case 0x8b: *type_res = hsplua_func::hl_isuserdata();      break;
+		case 0x90: *type_res = hsplua_func::hl_toboolean();       break;
+		case 0x91: *type_res = hsplua_func::hl_tocfunction();     break;
+		case 0x92: *type_res = hsplua_func::hl_tointeger();       break;
+		case 0x93: *type_res = hsplua_func::hl_tonumber();        break;
+		case 0x94: *type_res = hsplua_func::hl_topointer();       break;
+		case 0x95: *type_res = hsplua_func::hl_tostring();        break;
+		case 0x96: *type_res = hsplua_func::hl_touserdata();      break;
 		default: puterror( HSPERR_UNSUPPORTED_FUNCTION );         break;
 	}
 
@@ -106,6 +116,7 @@ int WINAPI DllMain (HINSTANCE hInstance, DWORD fdwReason, PVOID pvReserved)
 {
 	//		DLLエントリー (何もする必要はありません)
 	//
+	free(ref_sval); ref_sval = NULL;
 	return TRUE;
 }
 
@@ -115,6 +126,8 @@ EXPORT void WINAPI hsp3cmdinit( HSP3TYPEINFO *info )
 	//		プラグイン初期化 (実行・終了処理を登録します)
 	//
 	hsp3sdk_init( info );		// SDKの初期化(最初に行なって下さい)
+
+	ref_sval = (char*)malloc(64);
 
 	info->cmdfunc = cmdfunc;		// 実行関数(cmdfunc)の登録
 	info->reffunc = reffunc;		// 参照関数(reffunc)の登録

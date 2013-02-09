@@ -25,3 +25,10 @@
 #cmd hl_istable                 0x89
 #cmd hl_isthread                0x8a
 #cmd hl_isuserdata              0x8b
+#cmd hl_toboolean               0x90
+#cmd hl_tocfunction             0x91
+#cmd hl_tointeger               0x92
+#cmd hl_tonumber                0x93
+#cmd hl_topointer               0x94
+#cmd hl_tostring                0x95
+#cmd hl_touserdata              0x96

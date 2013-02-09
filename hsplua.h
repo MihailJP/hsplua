@@ -10,6 +10,8 @@ extern unsigned currentState;
 extern union RefVal {
 	int ival;
 	double dval;
+	char* sval;
 } ref_val;
+extern char* ref_sval;
 
 #endif

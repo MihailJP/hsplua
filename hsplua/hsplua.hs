@@ -822,3 +822,199 @@ Luaスタック状態取得関数
 %type
 拡張関数
 
+%index
+hl_toboolean
+スタックからブール値を取得する
+
+%prm
+(p1)
+p1 : スタックのインデックス
+
+%inst
+Lua のスタックで指定されたインデックスの内容をブール値に直して返します。
+Lua では、false と nil のみが偽であり、それ以外の値は全て真となります。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_pushboolean
+hl_isboolean
+hl_tocfunction
+hl_tointeger
+hl_tonumber
+hl_topointer
+hl_tostring
+hl_touserdata
+
+%group
+Lua スタック取得関数
+
+%index
+hl_tocfunction
+スタックからCの関数のポインタを取得する
+
+%prm
+(p1)
+p1 : スタックのインデックス
+
+%inst
+Lua のスタックで指定されたインデックスの内容を C の関数のポインタで返します。
+インデックスの内容が関数でなければ、ヌルポインタが返ります。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_pushfunction
+hl_iscfunction
+hl_isfunction
+hl_toboolean
+hl_tointeger
+hl_tonumber
+hl_topointer
+hl_tostring
+hl_touserdata
+
+%group
+Lua スタック取得関数
+
+%index
+hl_tointeger
+スタックから整数を取得する
+
+%prm
+(p1)
+p1 : スタックのインデックス
+
+%inst
+Lua のスタックで指定されたインデックスの内容を整数値に直して返します。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_pushinteger
+hl_toboolean
+hl_tocfunction
+hl_tonumber
+hl_topointer
+hl_tostring
+hl_touserdata
+
+%group
+Lua スタック取得関数
+
+%index
+hl_tonumber
+スタックから浮動小数点数を取得する
+
+%prm
+(p1)
+p1 : スタックのインデックス
+
+%inst
+Lua のスタックで指定されたインデックスの内容を浮動小数点数値に直して返します。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_pushnumber
+hl_isnumber
+hl_toboolean
+hl_tocfunction
+hl_tointeger
+hl_topointer
+hl_tostring
+hl_touserdata
+
+%group
+Lua スタック取得関数
+
+%index
+hl_topointer
+スタックからポインタを取得する
+
+%prm
+(p1)
+p1 : スタックのインデックス
+
+%inst
+Lua のスタックで指定されたインデックスの内容をポインタに直して返します。
+但し、内容がユーザーデータ、テーブル、スレッド、関数のいずれかでなければ、ヌルポインタを返します。
+
+この関数は通常、デバッグ情報のためだけに使われます。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_toboolean
+hl_tocfunction
+hl_tointeger
+hl_tonumber
+hl_tostring
+hl_touserdata
+
+%group
+Lua スタック取得関数
+
+%index
+hl_tostring
+スタックから文字列を取得する
+
+%prm
+(p1)
+p1 : スタックのインデックス
+
+%inst
+Lua のスタックで指定されたインデックスの内容を文字列に変換し、その値を返します。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_pushlstring
+hl_pushstring
+hl_isstring
+hl_toboolean
+hl_tocfunction
+hl_tointeger
+hl_tonumber
+hl_topointer
+hl_touserdata
+
+%group
+Lua スタック取得関数
+
+%index
+hl_touserdata
+スタックからユーザーデータのポインタを取得する
+
+%prm
+(p1)
+p1 : スタックのインデックス
+
+%inst
+Lua のスタックで指定されたインデックスの内容がフルユーザーデータであれば、そのアドレスを返します。
+内容が軽量ユーザーデータであれば、そのポインタを返します。
+それ以外の場合、ヌルポインタを返します。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_pushlightuserdata
+hl_islightuserdata
+hl_isuserdata
+hl_toboolean
+hl_tocfunction
+hl_tointeger
+hl_tonumber
+hl_topointer
+hl_tostring
+
+%group
+Lua スタック取得関数
+
