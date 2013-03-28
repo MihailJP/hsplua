@@ -2,6 +2,14 @@
 #cmd hl_newstate                0x00
 #cmd hl_switchstate             0x01
 #cmd hl_close                   0x02
+#cmd hl_gccollect               0x04
+#cmd hl_gcgen                   0x05
+#cmd hl_gcinc                   0x06
+#cmd hl_gcrestart               0x07
+#cmd hl_gcsetpause              0x08
+#cmd hl_gcsetstepmul            0x09
+#cmd hl_gcstep                  0x0a
+#cmd hl_gcstop                  0x0b
 #cmd hl_pop                     0x10
 #cmd hl_pushboolean             0x11
 #cmd hl_pushfunction            0x12
@@ -32,3 +40,5 @@
 #cmd hl_topointer               0x94
 #cmd hl_tostring                0x95
 #cmd hl_touserdata              0x96
+#cmd hl_gccount                 0x98
+#cmd hl_gcisrunning             0x99

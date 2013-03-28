@@ -10,6 +10,7 @@
 #include "pushpop.h"
 #include "chktype.h"
 #include "readval.h"
+#include "gc.h"
 #include <cstdlib>
 
  /*------------------------------------------------------------*/
@@ -31,6 +32,14 @@ static int cmdfunc( int cmd )
 		case 0x00: hsplua_cmd::hl_newstate();             break;
 		case 0x01: hsplua_cmd::hl_switchstate();          break;
 		case 0x02: hsplua_cmd::hl_close();                break;
+		case 0x04: hsplua_cmd::hl_gccollect();            break;
+		case 0x05: hsplua_cmd::hl_gcgen();                break;
+		case 0x06: hsplua_cmd::hl_gcinc();                break;
+		case 0x07: hsplua_cmd::hl_gcrestart();            break;
+		case 0x08: hsplua_cmd::hl_gcsetpause();           break;
+		case 0x09: hsplua_cmd::hl_gcsetstepmul();         break;
+		case 0x0a: hsplua_cmd::hl_gcstep();               break;
+		case 0x0b: hsplua_cmd::hl_gcstop();               break;
 		case 0x10: hsplua_cmd::hl_pop();                  break;
 		case 0x11: hsplua_cmd::hl_pushboolean();          break;
 		case 0x12: hsplua_cmd::hl_pushfunction();         break;
@@ -85,6 +94,8 @@ static void *reffunc( int *type_res, int cmd )
 		case 0x94: *type_res = hsplua_func::hl_topointer();       break;
 		case 0x95: *type_res = hsplua_func::hl_tostring();        break;
 		case 0x96: *type_res = hsplua_func::hl_touserdata();      break;
+		case 0x98: *type_res = hsplua_func::hl_gccount();         break;
+		case 0x99: *type_res = hsplua_func::hl_gcisrunning();     break;
 		default: puterror( HSPERR_UNSUPPORTED_FUNCTION );         break;
 	}
 

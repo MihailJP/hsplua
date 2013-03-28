@@ -423,6 +423,210 @@ hl_pushvalue
 Luaスタック操作命令
 
 %index
+hl_gcstop
+ガーベジコレクタを停止する
+
+%prm
+
+%inst
+ガーベジコレクタの自動実行を停止します。
+
+自動的なガーベジコレクションを再開するには、hl_gcrestart 命令を使用します。
+hl_gccollect 命令を使用することで、明示的にガーベジコレクションを実行します。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_gcrestart
+hl_gccollect
+hl_gcstep
+
+%group
+Luaガーベジコレクタ制御命令
+
+%index
+hl_gcrestart
+ガーベジコレクタを再開する
+
+%prm
+
+%inst
+ガーベジコレクタの自動実行を再開します。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_gcstop
+hl_gccollect
+hl_gcstep
+
+%group
+Luaガーベジコレクタ制御命令
+
+%index
+hl_gccollect
+ガーベジコレクションを実行する
+
+%prm
+
+%inst
+ガーベジコレクションの完全なサイクルを実行します。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_gcstop
+hl_gcrestart
+hl_gcstep
+
+%group
+Luaガーベジコレクタ制御命令
+
+%index
+hl_gcstep
+ガーベジコレクションをステップ実行する
+
+%prm
+(p1)
+p1 : ステップサイズ
+
+%inst
+ガーベジコレクションをステップ実行します。p1 にはステップサイズを指定します。
+このステップでガーベジコレクションのサイクルが終了した場合、stat に 1 が返ります。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_gcstop
+hl_gcrestart
+hl_gccollect
+
+%group
+Luaガーベジコレクタ制御命令
+
+%index
+hl_gcsetpause
+ガーベジコレクタの停止期間を設定する
+
+%prm
+p1
+p1 : 設定する値
+
+%inst
+ガーベジコレクタの停止期間を p1 に設定します。
+stat に以前の値が返ります。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_gcsetstepmul
+
+%group
+Luaガーベジコレクタ制御命令
+
+%index
+hl_gcsetstepmul
+ガーベジコレクタのステップ係数を設定する
+
+%prm
+p1
+p1 : 設定する値
+
+%inst
+ガーベジコレクタのステップ係数を p1 に設定します。
+stat に以前の値が返ります。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_gcsetpause
+
+%group
+Luaガーベジコレクタ制御命令
+
+%index
+hl_gcgen
+世代別ガーベジコレクションを指示する
+
+%prm
+
+%inst
+世代別ガーベジコレクションに変更します。
+Lua 5.2.1 では、これは実験的な機能であることに注意してください。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_gcinc
+
+%group
+Luaガーベジコレクタ制御命令
+
+%index
+hl_gcinc
+インクリメンタルガーベジコレクションを指示する
+
+%prm
+
+%inst
+インクリメンタルガーベジコレクションに変更します。
+Lua 5.2.1 では、これはデフォルトのモードです。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+hl_gcgen
+
+%group
+Luaガーベジコレクタ制御命令
+
+%index
+hl_gccount
+Lua が使用しているメモリの量を返す
+
+%prm
+()
+
+%inst
+Lua が使用している現在のメモリ量を返します。返り値は浮動小数点型で、単位はキロバイトです。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+; 関連項目 を記入
+
+%group
+Luaガーベジコレクタ制御関数
+
+%index
+hl_gcisrunning
+ガーベジコレクタが実行中かどうかを返す
+
+%prm
+()
+
+%inst
+ガーベジコレクタが実行中であれば真、そうでなければ偽を返します。
+
+%sample
+; サンプルスクリプト を記入
+
+%href
+; 関連項目 を記入
+
+%group
+Luaガーベジコレクタ制御関数
+
+%index
 hl_isboolean
 ブール値かどうか確認する
 
