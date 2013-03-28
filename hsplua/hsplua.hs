@@ -848,7 +848,7 @@ hl_tostring
 hl_touserdata
 
 %group
-Lua スタック取得関数
+Luaスタック取得関数
 
 %index
 hl_tocfunction
@@ -877,7 +877,7 @@ hl_tostring
 hl_touserdata
 
 %group
-Lua スタック取得関数
+Luaスタック取得関数
 
 %index
 hl_tointeger
@@ -903,7 +903,7 @@ hl_tostring
 hl_touserdata
 
 %group
-Lua スタック取得関数
+Luaスタック取得関数
 
 %index
 hl_tonumber
@@ -930,7 +930,7 @@ hl_tostring
 hl_touserdata
 
 %group
-Lua スタック取得関数
+Luaスタック取得関数
 
 %index
 hl_topointer
@@ -958,7 +958,7 @@ hl_tostring
 hl_touserdata
 
 %group
-Lua スタック取得関数
+Luaスタック取得関数
 
 %index
 hl_tostring
@@ -986,7 +986,7 @@ hl_topointer
 hl_touserdata
 
 %group
-Lua スタック取得関数
+Luaスタック取得関数
 
 %index
 hl_touserdata
@@ -1016,5 +1016,5 @@ hl_topointer
 hl_tostring
 
 %group
-Lua スタック取得関数
+Luaスタック取得関数
 
